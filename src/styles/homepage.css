@@ -19,7 +19,6 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   background-color: aqua;
-  font-size: 1rem;
 }
 
 .container {
@@ -28,15 +27,43 @@ body {
   grid-template-columns: 1fr 4fr;
 }
 
-.container ul {
-  margin: 0;
-}
-
-.container ul li {
-  list-style: none;
-}
-
 .navigation {
   height: calc(100vh - 15vh);
   background-color: chartreuse;
+  padding-top: 45%;
+  position: sticky;
+}
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  list-style: none;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.navigation ul li img {
+  width: 25px;
+}
+
+li.navIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  padding: 15px 0;
+  letter-spacing: 1px;
+  padding-left: 40px;
+}
+
+li.navIcon:hover {
+  background-color: blue;
+}
+
+li.nested {
+  padding-left: 80px;
 }
