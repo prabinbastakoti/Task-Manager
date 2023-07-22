@@ -12,15 +12,20 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
+
   devtool: "inline-source-map",
+
   devServer: {
-    static: { directory: path.resolve(__dirname, "dist") },
+    static: {
+      directory: path.resolve(__dirname, "dist"),
+    },
     port: 3000,
     open: true,
     hot: true,
     compress: true,
     historyApiFallback: true,
   },
+
   module: {
     rules: [
       {
@@ -33,11 +38,12 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       title: "To - Do - List",
       filename: "index.html",
-      template: "src/template.html",
+      template: "src/home.html",
     }),
   ],
 };
