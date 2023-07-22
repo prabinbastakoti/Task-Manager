@@ -1,7 +1,7 @@
 {
-  "name": "todo-list",
+  "name": "task-manager",
   "version": "1.0.0",
-  "description": "Welcome To To-Do-List",
+  "description": "Welcome To Task Manager",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/prabinbastakoti/todo-list.git"
+    "url": "git+https://github.com/prabinbastakoti/Task-Manager.git"
   },
   "author": "Prabin Bastakoti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/prabinbastakoti/todo-list/issues"
+    "url": "https://github.com/prabinbastakoti/Task-Manager/issues"
   },
-  "homepage": "https://github.com/prabinbastakoti/todo-list#readme",
+  "homepage": "https://github.com/prabinbastakoti/Task-Manager#readme",
   "devDependencies": {
     "css-loader": "^6.8.1",
     "eslint": "^8.45.0",
