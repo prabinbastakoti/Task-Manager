@@ -24,7 +24,7 @@ body {
 .container {
   background-color: beige;
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 3.5fr;
 }
 
 .navigation {
@@ -32,11 +32,15 @@ body {
   background-color: chartreuse;
   padding-top: 45%;
   position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .navigation ul {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 .navigation ul li {
@@ -57,7 +61,7 @@ li.navIcon {
   cursor: pointer;
   padding: 15px 0;
   letter-spacing: 1px;
-  padding-left: 40px;
+  padding-left: 60px;
 }
 
 li.navIcon:hover {
@@ -65,5 +69,30 @@ li.navIcon:hover {
 }
 
 li.nested {
-  padding-left: 80px;
+  padding-left: 110px;
+  display: none;
+}
+
+li.nested.active {
+  display: flex;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+
+.footerText {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+img[id="githubLogo"] {
+  width: 16px;
+  cursor: pointer;
 }
