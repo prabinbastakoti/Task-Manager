@@ -1,4 +1,4 @@
-import favicon from "../assets/favicon.svg";
+import favicon from "../assets/favicon.png";
 
 import homepage from "../pages/homepage";
 

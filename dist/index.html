@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Task Manager</title>
-  <script defer src="bundle55e1abe56e452ab12743.js"></script></head>
+    <title>todoist</title>
+  <script defer src="bundlea24ef0c78ef9a3069add.js"></script></head>
   <body>
-    <header class="header">
+    <header class="header prevent-select">
       <div class="logo"></div>
-      <div class="logoText"><h1>Task Manager</h1></div>
+      <div class="logoText"><h1>todoist</h1></div>
     </header>
     <div class="container">
-      <nav class="navigation">
+      <nav class="navigation prevent-select">
         <ul>
           <li class="navIcon tasks">
             <img id="arrowIcon" /><img id="tasksIcon" />Tasks
@@ -20,6 +20,7 @@
           <li class="navIcon nested"><img id="weekIcon" />This Week</li>
           <li class="navIcon nested"><img id="monthIcon" />This Month</li>
           <li class="navIcon project"><img id="projectIcon" />Projects</li>
+          <li class="navIcon notes"><img id="notesIcon" />Quick Notes</li>
         </ul>
         <div class="footer">
           <div class="footerText">
@@ -32,10 +33,7 @@
           </div>
         </div>
       </nav>
-      <div class="itemsContainer">
-        hello World! These Background Colors are temporary. They are just here
-        to assist vision.
-      </div>
+      <div class="itemsContainer"></div>
     </div>
   </body>
 </html>

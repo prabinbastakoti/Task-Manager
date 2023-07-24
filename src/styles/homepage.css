@@ -3,6 +3,13 @@
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  touch-action: manipulation;
+}
+
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 body {
@@ -10,31 +17,37 @@ body {
   padding: 0;
 }
 
+h1 {
+  text-transform: lowercase;
+}
+
 .header {
   display: flex;
+  /* justify-content: center; */
   align-items: center;
   height: 15vh;
   gap: 1%;
   padding-left: 2%;
   letter-spacing: 1px;
   text-transform: uppercase;
-  background-color: aqua;
+  background-color: #333;
+  color: white;
 }
 
 .container {
-  background-color: beige;
   display: grid;
   grid-template-columns: 1fr 3.5fr;
+  overflow-y: hidden;
 }
 
 .navigation {
   height: calc(100vh - 15vh);
-  background-color: chartreuse;
-  padding-top: 45%;
+  padding-top: 20%;
   position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: #ddd;
 }
 
 .navigation ul {
@@ -65,7 +78,7 @@ li.navIcon {
 }
 
 li.navIcon:hover {
-  background-color: blue;
+  background-color: rgb(210, 210, 210);
 }
 
 li.nested {
@@ -82,17 +95,71 @@ li.nested.active {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-bottom: 15px;
+  padding-bottom: 8px;
 }
 
 .footerText {
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: bold;
   letter-spacing: 1.5px;
 }
 
 img[id="githubLogo"] {
-  width: 16px;
+  width: 15px;
   cursor: pointer;
+}
+.itemsContainer {
+  height: calc(100vh - 15vh);
+}
+#homeBackground {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+img#logo {
+  width: 35px;
+}
+
+#allTasks {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 43%;
+  padding: 15px 45px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: rgb(230, 230, 230);
+  transition: 0.4s;
+}
+
+#allTasks:hover {
+  transform: scale(1);
+  color: white;
+}
+
+#allTasks::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: 0.4s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+#allTasks:hover::before {
+  transition: transform 0.4s;
+  transform-origin: left;
+  transform: scaleX(1);
 }

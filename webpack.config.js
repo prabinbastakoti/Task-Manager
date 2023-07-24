@@ -41,7 +41,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Task Manager",
+      title: "todoist",
       filename: "index.html",
       template: "src/home.html",
     }),

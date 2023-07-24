@@ -1,4 +1,4 @@
-import HeadingLogo from "../assets/favicon.svg";
+import HeadingLogo from "../assets/logo.png";
 
 import downarrowIcon from "../assets/downarrow.png";
 
@@ -16,6 +16,10 @@ import taskIcon from "../assets/tasks.png";
 
 import githubLogo from "../assets/github.png";
 
+import homepageBackground from "../assets/homepage.jpg";
+
+import noteIcon from "../assets/notes.png";
+
 const functions = (() => {
   const addImage = () => {
     const logo = document.querySelector(".logo");
@@ -23,6 +27,21 @@ const functions = (() => {
     img.src = HeadingLogo;
     img.setAttribute("id", "logo");
     logo.appendChild(img);
+
+    const mainContainer = document.querySelector(".itemsContainer");
+    mainContainer.style.position = "relative";
+
+    const allTasks = document.createElement("button");
+    allTasks.innerHTML = "View All Tasks";
+    allTasks.setAttribute("type", "button");
+    allTasks.setAttribute("id", "allTasks");
+
+    mainContainer.appendChild(allTasks);
+
+    const background = document.createElement("img");
+    background.src = homepageBackground;
+    background.setAttribute("id", "homeBackground");
+    mainContainer.appendChild(background);
   };
 
   const addIcons = () => {
@@ -46,6 +65,9 @@ const functions = (() => {
 
     const githubIcon = document.getElementById("githubLogo");
     githubIcon.src = githubLogo;
+
+    const notes = document.getElementById("notesIcon");
+    notes.src = noteIcon;
   };
 
   return { addImage, addIcons };
