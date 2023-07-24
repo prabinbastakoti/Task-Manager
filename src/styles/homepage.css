@@ -37,13 +37,11 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: 1fr 3.5fr;
-  overflow-y: hidden;
 }
 
 .navigation {
   height: calc(100vh - 15vh);
   padding-top: 20%;
-  position: sticky;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -111,6 +109,7 @@ img[id="githubLogo"] {
 }
 .itemsContainer {
   height: calc(100vh - 15vh);
+  position: relative;
 }
 #homeBackground {
   width: 100%;
@@ -121,13 +120,16 @@ img[id="githubLogo"] {
 
 img#logo {
   width: 35px;
+  cursor: pointer;
+}
+
+.logoText {
+  cursor: pointer;
 }
 
 #allTasks {
+  margin-top: 7.5%;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 43%;
   padding: 15px 45px;
   font-weight: bold;
   font-size: 0.8rem;
@@ -135,7 +137,7 @@ img#logo {
   border-radius: 4px;
   border: none;
   outline: none;
-  background-color: rgb(230, 230, 230);
+  background-color: #ddd;
   transition: 0.4s;
 }
 
@@ -162,4 +164,33 @@ img#logo {
   transition: transform 0.4s;
   transform-origin: left;
   transform: scaleX(1);
+}
+
+.homeHeading {
+  font-weight: bolder;
+  font-size: 4rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.headingParagraph {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  padding: 0 80px;
+  line-height: 50px;
+  letter-spacing: 1px;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+}
+
+.topHeading {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }

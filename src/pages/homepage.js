@@ -1,4 +1,6 @@
-import HeadingLogo from "../assets/logo.png";
+import HeadingLogo from "../assets/logo.svg";
+
+import DarkHeadingLogo from "../assets/favicon.svg";
 
 import downarrowIcon from "../assets/downarrow.png";
 
@@ -16,32 +18,15 @@ import taskIcon from "../assets/tasks.png";
 
 import githubLogo from "../assets/github.png";
 
-import homepageBackground from "../assets/homepage.jpg";
-
 import noteIcon from "../assets/notes.png";
 
-const functions = (() => {
+const NavBarfunctions = (() => {
   const addImage = () => {
     const logo = document.querySelector(".logo");
     const img = document.createElement("img");
     img.src = HeadingLogo;
     img.setAttribute("id", "logo");
     logo.appendChild(img);
-
-    const mainContainer = document.querySelector(".itemsContainer");
-    mainContainer.style.position = "relative";
-
-    const allTasks = document.createElement("button");
-    allTasks.innerHTML = "View All Tasks";
-    allTasks.setAttribute("type", "button");
-    allTasks.setAttribute("id", "allTasks");
-
-    mainContainer.appendChild(allTasks);
-
-    const background = document.createElement("img");
-    background.src = homepageBackground;
-    background.setAttribute("id", "homeBackground");
-    mainContainer.appendChild(background);
   };
 
   const addIcons = () => {
@@ -73,10 +58,57 @@ const functions = (() => {
   return { addImage, addIcons };
 })();
 
-const homepage = () => {
-  functions.addImage();
+const viewTaskButton = () => {
+  const mainContainer = document.querySelector(".itemsContainer");
 
-  functions.addIcons();
+  const heading = document.createElement("div");
+  heading.classList.add("topHeading");
+
+  const headingLogo = document.createElement("img");
+  headingLogo.src = DarkHeadingLogo;
+
+  const headingText = document.createElement("h1");
+  headingText.innerHTML = "todoist";
+  headingText.classList.add("homeHeading");
+
+  heading.appendChild(headingLogo);
+  heading.appendChild(headingText);
+
+  const headingPara = document.createElement("p");
+  headingPara.classList.add("headingParagraph");
+  headingPara.innerHTML =
+    "todoist is a productive system. It is a powerful and intuitive online tool designed to streamline and organize your daily tasks, assignments, and projects. This website aims to provide users with a seamless task management experience, helping them enhance productivity and effectively manage their time.";
+
+  const buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("buttonsContainer");
+
+  const buttonsName = ["View All Tasks", "View All Projects", "View All Notes"];
+
+  for (let i = 0; i < buttonsName.length; i++) {
+    const allTasks = document.createElement("button");
+    allTasks.innerHTML = buttonsName[i];
+    allTasks.setAttribute("type", "button");
+    if (i === 0) {
+      allTasks.setAttribute("class", "allTasks");
+    } else if (i === 1) {
+      allTasks.setAttribute("class", "allProjects");
+    } else if (i === 2) {
+      allTasks.setAttribute("class", "allNotes");
+    }
+    allTasks.setAttribute("id", "allTasks");
+    allTasks.classList.add("prevent-select");
+    buttonsContainer.appendChild(allTasks);
+  }
+
+  mainContainer.appendChild(heading);
+  mainContainer.appendChild(headingPara);
+  mainContainer.appendChild(buttonsContainer);
+};
+
+const homepage = () => {
+  NavBarfunctions.addImage();
+  NavBarfunctions.addIcons();
+  viewTaskButton();
 };
 
 const toggleTasks = () => {
@@ -94,5 +126,17 @@ const toggleTasks = () => {
   });
 };
 
+const removeToggle = () => {
+  const nestedItems = document.querySelectorAll(".nested");
+  const arrowIcons = document.getElementById("arrowIcon");
+
+  nestedItems.forEach((item) => {
+    if (item.classList.contains("active")) {
+      item.classList.remove("active");
+    }
+    arrowIcons.src = downarrowIcon;
+  });
+};
+
 export default homepage;
-export { toggleTasks };
+export { toggleTasks, viewTaskButton, removeToggle };
